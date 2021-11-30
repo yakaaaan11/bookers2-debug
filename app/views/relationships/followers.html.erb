@@ -1,0 +1,7 @@
+
+<h2>Follower Users</h2>
+<% if @users.exists? %>
+    <%= render "relationships/index", users: @users %>
+<% else %>
+    <p>ユーザーがいません</p>
+<% end %>
