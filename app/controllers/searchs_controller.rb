@@ -8,7 +8,4 @@ class SearchsController < ApplicationController
           @books = Book.search(params[:method],params[:word])
         end
     end
-    
-    
-            
 end
