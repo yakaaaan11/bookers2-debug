@@ -1,2 +1,2 @@
-$("#book_<%= @book.id %>").html("<%= j(render "favorites/favorite", book: @favorite.book) %>");
+$("#favorite_btn_<%= @book.id %>").html("<%= j(render "favorites/favorite", book: @favorite.book) %>");
 <!--createアクションに紐づくbookの処理を行うため　@bookではなく@favorite.book-->
