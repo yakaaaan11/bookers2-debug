@@ -43,7 +43,9 @@
       </table>
 
       <table id="comment_index">
-        <%= render "book_comments/index", book_comments: @book_comments %>
+        <% @book_comments.each do |book_comment| %>
+          <%= render "book_comments/index", book_comment: book_comment %>
+        <% end %>
       </table>
       
       <div id="comment_form">

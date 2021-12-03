@@ -6,10 +6,8 @@ class BookCommentsController < ApplicationController
         @comment = current_user.book_comments.new(book_comment_params)
         @comment.book_id = @book.id
         @comment.user_id = current_user.id
-        unless @comment.save
-            @comments = @book.comments.all
-            render :index
-        end
+        @comment.save
+        render :index
         # if @comment.save
         #     redirect_to book_path(book)
         # else
