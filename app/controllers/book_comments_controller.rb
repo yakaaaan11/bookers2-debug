@@ -8,11 +8,6 @@ class BookCommentsController < ApplicationController
         @book_comment.user_id = current_user.id
         unless @book_comment.save
             render :error
-        # if @comment.save
-        #     redirect_to book_path(book)
-        # else
-        #     redirect_back(fallback_location: root_path)
-        # end
         end
     end
     
