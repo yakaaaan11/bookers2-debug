@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
+  get 'rooms/show'
+  get 'chats/show'
   devise_for :users
   resources :users,only: [:show,:index,:edit,:update] do
     resource :relationships, only: [:create, :destroy]
     get "followings" =>"relationships#followings", as: "followings"
     get "followers" => "relationships#followers", as: "followers"
+    resources :chats, only: [:create]
+    resources :rooms, only: [:show, :create]
+    
   end
   
   resources :books,only: [:new,:create,:index,:show,:edit,:update,:destroy] do
