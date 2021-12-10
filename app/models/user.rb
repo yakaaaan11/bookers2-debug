@@ -15,7 +15,6 @@ class User < ApplicationRecord
   
   has_many :user_rooms, dependent: :destroy
   has_many :chats, dependent: :destroy
-  has_many :rooms, through: :room_users
   
   def follow(user_id)
     follower.create(followed_id: user_id)
